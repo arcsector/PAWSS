@@ -4,9 +4,26 @@ import hashlib
 import json
 import requests
 from datetime import date
+
+from requests.models import Response
 from .resources import QueryFilters, SSLQuery, ReportTypes
 
 class Config:
+    """Class for Config variables
+
+    Normally housed in a secrets file, but now can be anything modularly passed to this config.
+    Is used for authentication to API by :class:`ShadowAPI`.
+
+    Args:
+        key (str): API Key
+        secret (str): API Secret
+        uri (str, optional): URI for shadowserver auth. Defaults to "https://transform.shadowserver.org/api2/".
+
+    Attributes:
+        key (str): API Key
+        secret (str): API Secret
+        uri (str): URI for shadowserver auth. Defaults to "https://transform.shadowserver.org/api2/".
+    """
     key: str
     secret: str
     uri: str
@@ -20,47 +37,92 @@ class Config:
         return {"key": self.key, "secret": self.secret, "uri": self.uri}
 
 class ShadowAPI:
+    """Shadowserver API query wrapper main class
+
+    Used to query shadowserver for anything supported by the v2 API
+
+    Args:
+        config (:class:`Config`, optional): Configurations for authentication. Defaults to None.
+        timeout (int, optional): Timeout length in seconds. Defaults to 45.
+
+    Attributes:
+        config (:class:`Config`): Configurations for authentication. Defaults to None.
+        TIMEOUT (int): Timeout length in seconds. Defaults to 45.
+        base_uri (str): URI for Shadowserver API
+        secret_bytes (bytes): Filled when :meth:`api_call` is first ran. Bytestring of API secret
+    """
     TIMEOUT: int
-    uri: str
     config: Config
     base_uri: str = "https://api.shadowserver.org/"
+    secret_bytes: bytes
 
     def __init__(self, config: Config = None, timeout: int = 45):
         if config:
             self.config = config
         self.TIMEOUT = timeout
 
-    def check_valid(self, dictionary: dict, variable_list: list):
+    def check_valid(self, dictionary: dict, variable_list: list) -> dict:
+        """Set variables which are non-empty into a dictionary
+
+        Args:
+            dictionary (dict): Dictionary to set
+            variable_list (list): List of variables in tuples with the string name 
+                of the variable first and the variable value second
+
+        Returns:
+            dict: Modified dictionary
+        """
         for tup in variable_list:
             name = tup[0]
             variable = tup[1]
             if variable: dictionary[name] = variable
         return dictionary
 
-    def date_eval(self, date_: date, date_end: date):
+    def date_eval(self, date_: date, date_end: date = None) -> str:
+        """Creates stringified date range accepted by Shadowserver
+
+        Args:
+            date_ (date): Initial date in the past
+            date_end (date, optional): Final date which is greater 
+                than the initial date. Note if this is not specified,
+                it is assumed that all entries from ``date_`` until now
+                are requested.
+
+        Returns:
+            string: Stringified date with either a date or date range in 
+                format ``%Y-%m-%d[:%Y-%m-%d]`` where the bracketed date is
+                optional.
+        """
         if date: date_ = date_.strftime("%Y-%m-%d")
         if date_end: date_ = date_ + ':' + date_end.strftime("%Y-%m-%d")
         return date_
 
-    def api_call(self, endpoint: str, request: dict = {}):
-        """
-        Call the specified api endpoint with a request dictionary.
+    def api_call(self, endpoint: str, request: dict = {}) -> list or requests.Response:
+        """Call the specified api endpoint with a request dictionary.
 
-        """
+        Args:
+            endpoint (str): HTTP endpoint to call
+            request (dict, optional): Request parameters dictionary. 
+                Defaults to an empty dictionary.
 
+        Returns:
+            list or :class:`Requests.Response`: either returns a 
+                serialized JSON list or a Requests Response
+        """
         url = self.config.uri + endpoint
 
         request['apikey'] = self.config.key
         request_string = json.dumps(request)
 
-        secret_bytes = bytes(str(self.config.secret), 'latin-1')
+        # cache secret bytes
+        if not self.secret_bytes:
+            self.secret_bytes = bytes(str(self.config.secret), 'latin-1')
+
         request_bytes = bytes(request_string, 'latin-1')
 
-        hmac_generator = hmac.new(secret_bytes, request_bytes, hashlib.sha256)
+        hmac_generator = hmac.new(self.secret_bytes, request_bytes, hashlib.sha256)
         hmac2 = hmac_generator.hexdigest()
 
-        #ua_request = Request(url, data=request_bytes, headers={'HMAC2': hmac2})
-        #response = urlopen(ua_request, timeout=self.TIMEOUT)
         req = requests.session()
         response = req.post(url, data=request_bytes, headers={'HMAC2': hmac2}, timeout=self.TIMEOUT)
 
@@ -71,10 +133,10 @@ class ShadowAPI:
             print("Unable to convert response to JSON")
         return resp
 
-    def set_config(self, key: str, secret: str, uri: str = "https://transform.shadowserver.org/api2/"):
+    def set_config(self, key: str, secret: str, uri: str = "https://transform.shadowserver.org/api2/") -> None:
         self.config = Config(key, secret, uri)
 
-    def ping(self):
+    def ping(self) -> list or requests.Response:
         """Ping the server to check credentials and API connectivity
 
         Returns:
@@ -82,7 +144,7 @@ class ShadowAPI:
         """
         return self.api_call('test/ping')
 
-    def keyinfo(self):
+    def keyinfo(self) -> list or requests.Response:
         """Check info on user associated with the key
 
         Returns:
@@ -90,7 +152,7 @@ class ShadowAPI:
         """
         return self.api_call('key/info')
 
-    def report_subscribed(self):
+    def report_subscribed(self) -> list or requests.Response:
         """Check subscribed reports
 
         Returns:
@@ -98,7 +160,7 @@ class ShadowAPI:
         """
         return self.api_call('reports/subscribed')
 
-    def report_types(self):
+    def report_types(self) -> list or requests.Response:
         """Check all possible report types
 
         Returns:
@@ -106,7 +168,7 @@ class ShadowAPI:
         """
         return self.api_call('reports/types')
 
-    def report_list(self, type_: str, limit: int, reports: list = None, date_: date = None, date_end: date = None):
+    def report_list(self, limit: int = None, type_: str = None, reports: list = None, date_: date = None, date_end: date = None) -> list or requests.Response:
         """List all reports
 
         Args:
@@ -129,7 +191,7 @@ class ShadowAPI:
 
     def report_download(self, id_: str = None, report: str = None, limit: int = None, 
         type_: str = None, date_: date = None, date_end: date = None
-        ):
+        ) -> list or requests.Response:
         """Downloads details on reports
 
         Args:
@@ -153,7 +215,7 @@ class ShadowAPI:
         print(data.apparent_encoding)
         return data
 
-    def report_stats(self, report: str, type_: str, date_: date = None, date_end: date = None):
+    def report_stats(self, report: str, type_: str, date_: date = None, date_end: date = None) -> list or requests.Response:
         """Allows looking through the history of the statistics of the different reports.
 
         Args:
@@ -174,7 +236,7 @@ class ShadowAPI:
         return self.api_call("reports/stats", req_dict)
 
     def report_query(self, query: dict, limit: int, page: int = 1, sort: str = None, 
-        date_: str = None, date_end: date = None, facet: str = None):
+        date_: str = None, date_end: date = None, facet: str = None) -> list or requests.Response:
         """Queries the report list for reports with specific attributes
 
         Query must be one of the filters found in :class:`accepted_query_filters.QueryFilters`.
@@ -204,7 +266,7 @@ class ShadowAPI:
         )
         return self.api_call("reports/query", req_dict)
 
-    def malware(self, hashlist: list):
+    def malware(self, hashlist: list) -> list or requests.Response:
         """Get malware info for a list of hashes
 
         Args:
@@ -215,7 +277,7 @@ class ShadowAPI:
         """
         return self.api_call("research/malware-info", {"sample": hashlist})
         
-    def trusted_program(self, hash_: str):
+    def trusted_program(self, hash_: str) -> list or requests.Response:
         """Get program info for a hash
 
         Args:
@@ -226,17 +288,17 @@ class ShadowAPI:
         """
         return self.api_call("research/trusted-program", {"sample": hash_})
 
-    def network(self, origin: str = None, peer: str = None, prefix: str = None, query: str = None):
+    def network(self, origin: str = None, peer: str = None, prefix: str = None, query: str = None) -> list or requests.Response:
         """Get network info on network IoC's
 
         Args:
-            origin (str, optional): . Defaults to None.
-            peer (str, optional): [description]. Defaults to None.
-            prefix (str, optional): [description]. Defaults to None.
-            query (str, optional): [description]. Defaults to None.
+            origin (str, optional): IoC as origin ASN. Defaults to None.
+            peer (str, optional): IoC as peer ASN. Defaults to None.
+            prefix (str, optional): IoC as ASN prefix. Defaults to None.
+            query (str, optional): IoC by ASN ID. Defaults to None.
 
         Returns:
-            [type]: [description]
+            list or :class:`requests.Response`: JSON data on the IoC
         """
         sess = requests.Session()
         argument = {}
@@ -247,7 +309,23 @@ class ShadowAPI:
 
     def ssl(self, query: dict, page: int = 1, date_: str = None,
         date_end: date = None, limit: int = None
-        ):
+        ) -> list or requests.Response:
+        """SSL IoC query
+
+        Args:
+            query (dict): Dictionary query parameters to pass
+            page (int, optional): Pagination if result set is larger than 1000. Defaults to 1.
+            date_ (date, optional): Date to get SSL data from
+            date_end (date, optional): Date to get SSL data since ``date_``; should be 
+                later than ``date_``. Defaults to None.
+            limit (int, optional): IoC return limit. Defaults to None which is 1000.
+
+        Raises:
+            ValueError: Raised if Query was not a valid filter for SSL IoCs.
+
+        Returns:
+            list or requests.Response: IoC data response.
+        """
         req_dict = {}
         if date_: date_ = self.date_eval(date_, date_end)
         if [q for q in query.keys() if q not in SSLQuery.ssl_query]:

@@ -25,11 +25,22 @@ def test_reports():
     r = S.report_types()
     print(type(r))
     assert type(r) in (dict, list)
+    SUBSCRIBED_REPORT_TYPES = r.copy()
 
-    r = S.report_stats(report = "united-states", type_="scan-exchange")
+    r = S.report_stats(report = "united-states", type_=r[0])
     assert type(r) in (dict, list)
     sleep(1)
 
+    r = S.report_list(reports = ["united-states"], limit = 3)
+    assert type(r) in (dict, list)
+    sleep(1)
+    
+    r = S.report_list(
+        reports = ["united-states", "california"], 
+        type_ = "hp_ics_scan", date_ = date(2020, 10, 27)
+    )
+    assert type(r) in (dict, list)
+    
     r = S.report_download(
         id_ = "uN6n7yZK90sdflkjdlLKTOkspksg?HjgX1lI_hAdsKGmVanG_Og", 
         limit = 3
@@ -42,16 +53,6 @@ def test_reports():
     )
     assert type(r) in (dict, list)
 
-    r = S.report_list(reports = ["united-states"], limit = 3)
-    assert type(r) in (dict, list)
-    sleep(1)
-    
-    r = S.report_list(
-        reports = ["united-states", "california"], 
-        type_ = "hp_ics_scan", date_ = date(2020, 10, 27)
-    )
-    assert type(r) in (dict, list)
-    
     r = S.report_query(date_ = date(2020, 10, 27), 
         query = {"geo":"us", "port":443}, limit =1
     )
