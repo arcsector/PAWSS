@@ -1,0 +1,2055 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>shadowapi package &mdash; Shadowserver API 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="shadowapi" href="modules.html" />
+    <link rel="prev" title="Welcome to Shadowserver API’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Shadowserver API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">shadowapi package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-shadowapi.call_api">shadowapi.call_api module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-shadowapi.resources">shadowapi.resources module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-shadowapi">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">shadowapi</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">shadowapi package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-shadowapi.call_api">shadowapi.call_api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-shadowapi.resources">shadowapi.resources module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-shadowapi">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Shadowserver API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>shadowapi package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/shadowapi.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shadowapi-package">
+<h1>shadowapi package<a class="headerlink" href="#shadowapi-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-shadowapi.call_api">
+<span id="shadowapi-call-api-module"></span><h2>shadowapi.call_api module<a class="headerlink" href="#module-shadowapi.call_api" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="shadowapi.call_api.Config">
+<em class="property">class </em><code class="sig-prename descclassname">shadowapi.call_api.</code><code class="sig-name descname">Config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">secret</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">uri</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'https://transform.shadowserver.org/api2/'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#shadowapi.call_api.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for Config variables</p>
+<p>Normally housed in a secrets file, but now can be anything modularly passed to this config.
+Is used for authentication to API by <a class="reference internal" href="#shadowapi.call_api.ShadowAPI" title="shadowapi.call_api.ShadowAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShadowAPI</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – API Key</p></li>
+<li><p><strong>secret</strong> (<em>str</em>) – API Secret</p></li>
+<li><p><strong>uri</strong> (<em>str</em><em>, </em><em>optional</em>) – URI for shadowserver auth. Defaults to “<a class="reference external" href="https://transform.shadowserver.org/api2/">https://transform.shadowserver.org/api2/</a>”.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="shadowapi.call_api.Config.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#shadowapi.call_api.Config.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>API Key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.call_api.Config.secret">
+<code class="sig-name descname">secret</code><a class="headerlink" href="#shadowapi.call_api.Config.secret" title="Permalink to this definition">¶</a></dt>
+<dd><p>API Secret</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.call_api.Config.uri">
+<code class="sig-name descname">uri</code><a class="headerlink" href="#shadowapi.call_api.Config.uri" title="Permalink to this definition">¶</a></dt>
+<dd><p>URI for shadowserver auth. Defaults to “<a class="reference external" href="https://transform.shadowserver.org/api2/">https://transform.shadowserver.org/api2/</a>”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-name descname">key</code><em class="property">: str</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id1">
+<code class="sig-name descname">secret</code><em class="property">: str</em><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.Config.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#shadowapi.call_api.Config.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id2">
+<code class="sig-name descname">uri</code><em class="property">: str</em><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="shadowapi.call_api.ShadowAPI">
+<em class="property">class </em><code class="sig-prename descclassname">shadowapi.call_api.</code><code class="sig-name descname">ShadowAPI</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#shadowapi.call_api.Config" title="shadowapi.call_api.Config">shadowapi.call_api.Config</a></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">45</span></em><span class="sig-paren">)</span><a class="headerlink" href="#shadowapi.call_api.ShadowAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Shadowserver API query wrapper main class</p>
+<p>Used to query shadowserver for anything supported by the v2 API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<a class="reference internal" href="#shadowapi.call_api.Config" title="shadowapi.call_api.Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">Config</span></code></a>, optional) – Configurations for authentication. Defaults to None.</p></li>
+<li><p><strong>timeout</strong> (<em>int</em><em>, </em><em>optional</em>) – Timeout length in seconds. Defaults to 45.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="shadowapi.call_api.ShadowAPI.config">
+<code class="sig-name descname">config</code><a class="headerlink" href="#shadowapi.call_api.ShadowAPI.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configurations for authentication. Defaults to None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#shadowapi.call_api.Config" title="shadowapi.call_api.Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">Config</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.call_api.ShadowAPI.TIMEOUT">
+<code class="sig-name descname">TIMEOUT</code><a class="headerlink" href="#shadowapi.call_api.ShadowAPI.TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Timeout length in seconds. Defaults to 45.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.call_api.ShadowAPI.base_uri">
+<code class="sig-name descname">base_uri</code><a class="headerlink" href="#shadowapi.call_api.ShadowAPI.base_uri" title="Permalink to this definition">¶</a></dt>
+<dd><p>URI for Shadowserver API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.call_api.ShadowAPI.secret_bytes">
+<code class="sig-name descname">secret_bytes</code><a class="headerlink" href="#shadowapi.call_api.ShadowAPI.secret_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filled when <a class="reference internal" href="#shadowapi.call_api.ShadowAPI.api_call" title="shadowapi.call_api.ShadowAPI.api_call"><code class="xref py py-meth docutils literal notranslate"><span class="pre">api_call()</span></code></a> is first ran. Bytestring of API secret</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id3">
+<code class="sig-name descname">TIMEOUT</code><em class="property">: int</em><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.api_call">
+<code class="sig-name descname">api_call</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">endpoint</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">request</span><span class="p">:</span> <span class="n">dict</span> <span class="o">=</span> <span class="default_value">{}</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.api_call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call the specified api endpoint with a request dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint</strong> (<em>str</em>) – HTTP endpoint to call</p></li>
+<li><p><strong>request</strong> (<em>dict</em><em>, </em><em>optional</em>) – Request parameters dictionary.
+Defaults to an empty dictionary.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>either returns a</dt><dd><p>serialized JSON list or a Requests Response</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list or <code class="xref py py-class docutils literal notranslate"><span class="pre">Requests.Response</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id4">
+<code class="sig-name descname">base_uri</code><em class="property">: str</em><em class="property"> = 'https://api.shadowserver.org/'</em><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.check_valid">
+<code class="sig-name descname">check_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dictionary</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">variable_list</span><span class="p">:</span> <span class="n">list</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.check_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set variables which are non-empty into a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dictionary</strong> (<em>dict</em>) – Dictionary to set</p></li>
+<li><p><strong>variable_list</strong> (<em>list</em>) – List of variables in tuples with the string name
+of the variable first and the variable value second</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Modified dictionary</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id5">
+<code class="sig-name descname">config</code><em class="property">: Config</em><a class="headerlink" href="#id5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.date_eval">
+<code class="sig-name descname">date_eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">date_</span><span class="p">:</span> <span class="n">datetime.date</span></em>, <em class="sig-param"><span class="n">date_end</span><span class="p">:</span> <span class="n">datetime.date</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.date_eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates stringified date range accepted by Shadowserver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>date</strong> (<em>date</em>) – Initial date in the past</p></li>
+<li><p><strong>date_end</strong> (<em>date</em><em>, </em><em>optional</em>) – Final date which is greater
+than the initial date. Note if this is not specified,
+it is assumed that all entries from <code class="docutils literal notranslate"><span class="pre">date_</span></code> until now
+are requested.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Stringified date with either a date or date range in</dt><dd><p>format <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d[:%Y-%m-%d]</span></code> where the bracketed date is
+optional.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.keyinfo">
+<code class="sig-name descname">keyinfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.keyinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check info on user associated with the key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary with info on user associated with the key</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.malware">
+<code class="sig-name descname">malware</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hashlist</span><span class="p">:</span> <span class="n">list</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.malware" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get malware info for a list of hashes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hashlist</strong> (<em>list</em>) – list of hashes</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of malware info</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.network">
+<code class="sig-name descname">network</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">origin</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">peer</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">prefix</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get network info on network IoC’s</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>origin</strong> (<em>str</em><em>, </em><em>optional</em>) – IoC as origin ASN. Defaults to None.</p></li>
+<li><p><strong>peer</strong> (<em>str</em><em>, </em><em>optional</em>) – IoC as peer ASN. Defaults to None.</p></li>
+<li><p><strong>prefix</strong> (<em>str</em><em>, </em><em>optional</em>) – IoC as ASN prefix. Defaults to None.</p></li>
+<li><p><strong>query</strong> (<em>str</em><em>, </em><em>optional</em>) – IoC by ASN ID. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>JSON data on the IoC</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list or <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.Response</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.ping">
+<code class="sig-name descname">ping</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.ping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ping the server to check credentials and API connectivity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary with “pong” key</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.report_download">
+<code class="sig-name descname">report_download</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id_</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">report</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">type_</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">date_</span><span class="p">:</span> <span class="n">datetime.date</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">date_end</span><span class="p">:</span> <span class="n">datetime.date</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.report_download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads details on reports</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em><em>, </em><em>optional</em>) – ID of report. Defaults to None.</p></li>
+<li><p><strong>report</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of report. Defaults to None.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – Limit on number of reports. Defaults to None.</p></li>
+<li><p><strong>date</strong> (<em>date</em><em>, </em><em>optional</em>) – Date to search reports for. Defaults to None.</p></li>
+<li><p><strong>date_end</strong> (<em>date</em><em>, </em><em>optional</em>) – Date to search reports since <code class="docutils literal notranslate"><span class="pre">date_</span></code>; should be
+later than <code class="docutils literal notranslate"><span class="pre">date_</span></code>. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of report JSON</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.report_list">
+<code class="sig-name descname">report_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">type_</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reports</span><span class="p">:</span> <span class="n">list</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">date_</span><span class="p">:</span> <span class="n">datetime.date</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">date_end</span><span class="p">:</span> <span class="n">datetime.date</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.report_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all reports</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em>) – Specific report to get download ID for.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – Limit the query to a specific number of records.</p></li>
+<li><p><strong>reports</strong> (<em>list</em><em>, </em><em>optional</em>) – Report types to return. Defaults to None.</p></li>
+<li><p><strong>date</strong> (<em>date</em><em>, </em><em>optional</em>) – Date to get reports for. Defaults to None.</p></li>
+<li><p><strong>date_end</strong> (<em>date</em><em>, </em><em>optional</em>) – Date to get reports since <code class="docutils literal notranslate"><span class="pre">date_</span></code>; should be
+later than <code class="docutils literal notranslate"><span class="pre">date_</span></code>. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of reports</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.report_query">
+<code class="sig-name descname">report_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">page</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em>, <em class="sig-param"><span class="n">sort</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">date_</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">date_end</span><span class="p">:</span> <span class="n">datetime.date</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">facet</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.report_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries the report list for reports with specific attributes</p>
+<p>Query must be one of the filters found in <code class="xref py py-class docutils literal notranslate"><span class="pre">accepted_query_filters.QueryFilters</span></code>.
+As a convenience, each filter is listed in both attribute and list format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>dict</em>) – Query to search reports with</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – [description]</p></li>
+<li><p><strong>page</strong> (<em>int</em><em>, </em><em>optional</em>) – [description]. Defaults to 1.</p></li>
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – [description]. Defaults to None.</p></li>
+<li><p><strong>date</strong> (<em>date</em><em>, </em><em>optional</em>) – Date to get reports with</p></li>
+<li><p><strong>date_end</strong> (<em>date</em><em>, </em><em>optional</em>) – Date to get reports with since <code class="docutils literal notranslate"><span class="pre">date_</span></code>; should be
+later than <code class="docutils literal notranslate"><span class="pre">date_</span></code>. Defaults to None.</p></li>
+<li><p><strong>facet</strong> (<em>str</em><em>, </em><em>optional</em>) – [description]. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of reports</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.report_stats">
+<code class="sig-name descname">report_stats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">report</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">type_</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">date_</span><span class="p">:</span> <span class="n">datetime.date</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">date_end</span><span class="p">:</span> <span class="n">datetime.date</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.report_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows looking through the history of the statistics of the different reports.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>report</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>list</em><em>]</em>) – Report names</p></li>
+<li><p><strong>type</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>list</em><em>]</em>) – Types of report to get</p></li>
+<li><p><strong>date</strong> (<em>date</em>) – Date to get reports with</p></li>
+<li><p><strong>date_end</strong> (<em>date</em><em>, </em><em>optional</em>) – Date to get reports with since <code class="docutils literal notranslate"><span class="pre">date_</span></code>; should be
+later than <code class="docutils literal notranslate"><span class="pre">date_</span></code>. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of statistics</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.report_subscribed">
+<code class="sig-name descname">report_subscribed</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.report_subscribed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check subscribed reports</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list with names of report subscriptions</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.report_types">
+<code class="sig-name descname">report_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.report_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check all possible report types</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list with names of report types</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id6">
+<code class="sig-name descname">secret_bytes</code><em class="property">: bytes</em><a class="headerlink" href="#id6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.set_config">
+<code class="sig-name descname">set_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">secret</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">uri</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'https://transform.shadowserver.org/api2/'</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.set_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.ssl">
+<code class="sig-name descname">ssl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">page</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em>, <em class="sig-param"><span class="n">date_</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">date_end</span><span class="p">:</span> <span class="n">datetime.date</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.ssl" title="Permalink to this definition">¶</a></dt>
+<dd><p>SSL IoC query</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>dict</em>) – Dictionary query parameters to pass</p></li>
+<li><p><strong>page</strong> (<em>int</em><em>, </em><em>optional</em>) – Pagination if result set is larger than 1000. Defaults to 1.</p></li>
+<li><p><strong>date</strong> (<em>date</em><em>, </em><em>optional</em>) – Date to get SSL data from</p></li>
+<li><p><strong>date_end</strong> (<em>date</em><em>, </em><em>optional</em>) – Date to get SSL data since <code class="docutils literal notranslate"><span class="pre">date_</span></code>; should be
+later than <code class="docutils literal notranslate"><span class="pre">date_</span></code>. Defaults to None.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – IoC return limit. Defaults to None which is 1000.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Raised if Query was not a valid filter for SSL IoCs.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>IoC data response.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list or requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="shadowapi.call_api.ShadowAPI.trusted_program">
+<code class="sig-name descname">trusted_program</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hash_</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#shadowapi.call_api.ShadowAPI.trusted_program" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get program info for a hash</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hash</strong> (<em>str</em>) – Hash</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Trusted Program info</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-shadowapi.resources">
+<span id="shadowapi-resources-module"></span><h2>shadowapi.resources module<a class="headerlink" href="#module-shadowapi.resources" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="shadowapi.resources.QueryFilters">
+<em class="property">class </em><code class="sig-prename descclassname">shadowapi.resources.</code><code class="sig-name descname">QueryFilters</code><a class="headerlink" href="#shadowapi.resources.QueryFilters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Query Filters for Reports</p>
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.AGENT">
+<code class="sig-name descname">AGENT</code><em class="property"> = 'agent'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.AGENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.APPLICATION">
+<code class="sig-name descname">APPLICATION</code><em class="property"> = 'application'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.APPLICATION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.ASN">
+<code class="sig-name descname">ASN</code><em class="property"> = 'asn'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.ASN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.ASN_NAME">
+<code class="sig-name descname">ASN_NAME</code><em class="property"> = 'asn_name'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.ASN_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.BANNER">
+<code class="sig-name descname">BANNER</code><em class="property"> = 'banner'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.BANNER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.CITY">
+<code class="sig-name descname">CITY</code><em class="property"> = 'city'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.CITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.COUNTY_FIPS">
+<code class="sig-name descname">COUNTY_FIPS</code><em class="property"> = 'county_fips'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.COUNTY_FIPS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.COUNTY_NAME">
+<code class="sig-name descname">COUNTY_NAME</code><em class="property"> = 'county_name'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.COUNTY_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DEVICE_MODEL">
+<code class="sig-name descname">DEVICE_MODEL</code><em class="property"> = 'device_model'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DEVICE_MODEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DEVICE_SECTOR">
+<code class="sig-name descname">DEVICE_SECTOR</code><em class="property"> = 'device_sector'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DEVICE_SECTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DEVICE_TYPE">
+<code class="sig-name descname">DEVICE_TYPE</code><em class="property"> = 'device_type'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DEVICE_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DEVICE_VENDOR">
+<code class="sig-name descname">DEVICE_VENDOR</code><em class="property"> = 'device_vendor'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DEVICE_VENDOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DEVICE_VERSION">
+<code class="sig-name descname">DEVICE_VERSION</code><em class="property"> = 'device_version'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DEVICE_VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DOMAIN">
+<code class="sig-name descname">DOMAIN</code><em class="property"> = 'domain'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DOMAIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_ASN">
+<code class="sig-name descname">DST_ASN</code><em class="property"> = 'dst_asn'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_ASN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_ASN_NAME">
+<code class="sig-name descname">DST_ASN_NAME</code><em class="property"> = 'dst_asn_name'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_ASN_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_CITY">
+<code class="sig-name descname">DST_CITY</code><em class="property"> = 'dst_city'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_CITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_COUNTY_FIPS">
+<code class="sig-name descname">DST_COUNTY_FIPS</code><em class="property"> = 'dst_county_fips'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_COUNTY_FIPS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_COUNTY_NAME">
+<code class="sig-name descname">DST_COUNTY_NAME</code><em class="property"> = 'dst_county_name'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_COUNTY_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_GEO">
+<code class="sig-name descname">DST_GEO</code><em class="property"> = 'dst_geo'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_GEO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_IP">
+<code class="sig-name descname">DST_IP</code><em class="property"> = 'dst_ip'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_IP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_ISP_NAME">
+<code class="sig-name descname">DST_ISP_NAME</code><em class="property"> = 'dst_isp_name'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_ISP_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_LATITUDE">
+<code class="sig-name descname">DST_LATITUDE</code><em class="property"> = 'dst_latitude'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_LATITUDE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_LONGITUDE">
+<code class="sig-name descname">DST_LONGITUDE</code><em class="property"> = 'dst_longitude'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_LONGITUDE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_NAICS">
+<code class="sig-name descname">DST_NAICS</code><em class="property"> = 'dst_naics'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_NAICS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_PORT">
+<code class="sig-name descname">DST_PORT</code><em class="property"> = 'dst_port'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_PORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_REGION">
+<code class="sig-name descname">DST_REGION</code><em class="property"> = 'dst_region'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_REGION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.DST_SECTOR">
+<code class="sig-name descname">DST_SECTOR</code><em class="property"> = 'dst_sector'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.DST_SECTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.FAMILY">
+<code class="sig-name descname">FAMILY</code><em class="property"> = 'family'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.FAMILY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.GEO">
+<code class="sig-name descname">GEO</code><em class="property"> = 'geo'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.GEO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.INFECTION">
+<code class="sig-name descname">INFECTION</code><em class="property"> = 'infection'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.INFECTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.IP">
+<code class="sig-name descname">IP</code><em class="property"> = 'ip'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.IP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.ISP_NAME">
+<code class="sig-name descname">ISP_NAME</code><em class="property"> = 'isp_name'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.ISP_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.LATITUDE">
+<code class="sig-name descname">LATITUDE</code><em class="property"> = 'latitude'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.LATITUDE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.LONGITUDE">
+<code class="sig-name descname">LONGITUDE</code><em class="property"> = 'longitude'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.LONGITUDE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.MD5">
+<code class="sig-name descname">MD5</code><em class="property"> = 'md5'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.MD5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.NAICS">
+<code class="sig-name descname">NAICS</code><em class="property"> = 'naics'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.NAICS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.PORT">
+<code class="sig-name descname">PORT</code><em class="property"> = 'port'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.PORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.PROTOCOL">
+<code class="sig-name descname">PROTOCOL</code><em class="property"> = 'protocol'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.PROTOCOL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.REFERER">
+<code class="sig-name descname">REFERER</code><em class="property"> = 'referer'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.REFERER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.REGION">
+<code class="sig-name descname">REGION</code><em class="property"> = 'region'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.REGION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.REGISTRAR">
+<code class="sig-name descname">REGISTRAR</code><em class="property"> = 'registrar'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.REGISTRAR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.SECTOR">
+<code class="sig-name descname">SECTOR</code><em class="property"> = 'sector'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.SECTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.SHA1">
+<code class="sig-name descname">SHA1</code><em class="property"> = 'sha1'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.SHA1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.SHA256">
+<code class="sig-name descname">SHA256</code><em class="property"> = 'sha256'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.SHA256" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.SHA512">
+<code class="sig-name descname">SHA512</code><em class="property"> = 'sha512'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.SHA512" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.SID">
+<code class="sig-name descname">SID</code><em class="property"> = 'sid'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.SID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.SOURCE">
+<code class="sig-name descname">SOURCE</code><em class="property"> = 'source'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.SOURCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.SOURCE_URL">
+<code class="sig-name descname">SOURCE_URL</code><em class="property"> = 'source_url'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.SOURCE_URL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.TAG">
+<code class="sig-name descname">TAG</code><em class="property"> = 'tag'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.TAG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.TEXT">
+<code class="sig-name descname">TEXT</code><em class="property"> = 'text'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.TEXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.TIMESTAMP">
+<code class="sig-name descname">TIMESTAMP</code><em class="property"> = 'timestamp'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.TIMESTAMP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.TLD">
+<code class="sig-name descname">TLD</code><em class="property"> = 'tld'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.TLD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.TYPE">
+<code class="sig-name descname">TYPE</code><em class="property"> = 'type'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.VERSION">
+<code class="sig-name descname">VERSION</code><em class="property"> = 'version'</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.QueryFilters.query_list">
+<code class="sig-name descname">query_list</code><em class="property"> = ['agent', 'application', 'asn', 'asn_name', 'banner', 'city', 'county_fips', 'county_name', 'device_model', 'device_sector', 'device_type', 'device_vendor', 'device_version', 'domain', 'dst_asn', 'dst_asn_name', 'dst_city', 'dst_county_fips', 'dst_county_name', 'dst_geo', 'dst_ip', 'dst_isp_name', 'dst_latitude', 'dst_longitude', 'dst_naics', 'dst_port', 'dst_region', 'dst_sector', 'family', 'geo', 'infection', 'ip', 'isp_name', 'latitude', 'longitude', 'md5', 'naics', 'port', 'protocol', 'referer', 'region', 'registrar', 'sector', 'sha1', 'sha256', 'sha512', 'sid', 'source', 'source_url', 'tag', 'text', 'timestamp', 'tld', 'type', 'version']</em><a class="headerlink" href="#shadowapi.resources.QueryFilters.query_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="shadowapi.resources.ReportTypes">
+<em class="property">class </em><code class="sig-prename descclassname">shadowapi.resources.</code><code class="sig-name descname">ReportTypes</code><a class="headerlink" href="#shadowapi.resources.ReportTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Report Types for query validation</p>
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.BLOCKLIST">
+<code class="sig-name descname">BLOCKLIST</code><em class="property"> = 'blocklist'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.BLOCKLIST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.BOTNET_DRONE">
+<code class="sig-name descname">BOTNET_DRONE</code><em class="property"> = 'botnet_drone'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.BOTNET_DRONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.CISCO_SMART_INSTALL">
+<code class="sig-name descname">CISCO_SMART_INSTALL</code><em class="property"> = 'cisco_smart_install'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.CISCO_SMART_INSTALL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.COMPROMISED_WEBSITE">
+<code class="sig-name descname">COMPROMISED_WEBSITE</code><em class="property"> = 'compromised_website'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.COMPROMISED_WEBSITE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.DDOS_AMPLIFICATION">
+<code class="sig-name descname">DDOS_AMPLIFICATION</code><em class="property"> = 'ddos_amplification'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.DDOS_AMPLIFICATION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.DRONE_BRUTE_FORCE">
+<code class="sig-name descname">DRONE_BRUTE_FORCE</code><em class="property"> = 'drone_brute_force'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.DRONE_BRUTE_FORCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.HP_HTTP_SCAN">
+<code class="sig-name descname">HP_HTTP_SCAN</code><em class="property"> = 'hp_http_scan'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.HP_HTTP_SCAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.HP_ICS_SCAN">
+<code class="sig-name descname">HP_ICS_SCAN</code><em class="property"> = 'hp_ics_scan'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.HP_ICS_SCAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.NETIS_ROUTER">
+<code class="sig-name descname">NETIS_ROUTER</code><em class="property"> = 'netis_router'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.NETIS_ROUTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_ADB">
+<code class="sig-name descname">SCAN_ADB</code><em class="property"> = 'scan_adb'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_ADB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_AFP">
+<code class="sig-name descname">SCAN_AFP</code><em class="property"> = 'scan_afp'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_AFP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_ARD">
+<code class="sig-name descname">SCAN_ARD</code><em class="property"> = 'scan_ard'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_ARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_CHARGEN">
+<code class="sig-name descname">SCAN_CHARGEN</code><em class="property"> = 'scan_chargen'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_CHARGEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_COAP">
+<code class="sig-name descname">SCAN_COAP</code><em class="property"> = 'scan_coap'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_COAP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_CWMP">
+<code class="sig-name descname">SCAN_CWMP</code><em class="property"> = 'scan_cwmp'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_CWMP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_DB2">
+<code class="sig-name descname">SCAN_DB2</code><em class="property"> = 'scan_db2'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_DB2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_SSL_FREAK">
+<code class="sig-name descname">SCAN_SSL_FREAK</code><em class="property"> = 'scan_ssl_freak'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_SSL_FREAK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_SSL_POODLE">
+<code class="sig-name descname">SCAN_SSL_POODLE</code><em class="property"> = 'scan_ssl_poodle'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_SSL_POODLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_TELNET">
+<code class="sig-name descname">SCAN_TELNET</code><em class="property"> = 'scan_telnet'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_TELNET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_TFTP">
+<code class="sig-name descname">SCAN_TFTP</code><em class="property"> = 'scan_tftp'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_TFTP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_UBIQUITI">
+<code class="sig-name descname">SCAN_UBIQUITI</code><em class="property"> = 'scan_ubiquiti'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_UBIQUITI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_VNC">
+<code class="sig-name descname">SCAN_VNC</code><em class="property"> = 'scan_vnc'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_VNC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SCAN_XDMCP">
+<code class="sig-name descname">SCAN_XDMCP</code><em class="property"> = 'scan_xdmcp'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SCAN_XDMCP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SINKHOLE_HTTP_DRONE">
+<code class="sig-name descname">SINKHOLE_HTTP_DRONE</code><em class="property"> = 'sinkhole_http_drone'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SINKHOLE_HTTP_DRONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.SPAM_URL">
+<code class="sig-name descname">SPAM_URL</code><em class="property"> = 'spam_url'</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.SPAM_URL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.ReportTypes.report_types">
+<code class="sig-name descname">report_types</code><em class="property"> = ['blocklist', 'botnet_drone', 'cisco_smart_install', 'compromised_website', 'ddos_amplification', 'drone_brute_force', 'hp_http_scan', 'hp_ics_scan', 'netis_router', 'scan_adb', 'scan_afp', 'scan_ard', 'scan_chargen', 'scan_coap', 'scan_cwmp', 'scan_db2', 'scan_ssl_freak', 'scan_ssl_poodle', 'scan_telnet', 'scan_tftp', 'scan_ubiquiti', 'scan_vnc', 'scan_xdmcp', 'sinkhole_http_drone', 'spam_url']</em><a class="headerlink" href="#shadowapi.resources.ReportTypes.report_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="shadowapi.resources.SSLQuery">
+<em class="property">class </em><code class="sig-prename descclassname">shadowapi.resources.</code><code class="sig-name descname">SSLQuery</code><a class="headerlink" href="#shadowapi.resources.SSLQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>SSL Query parameters and filters</p>
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ALGORITHM">
+<code class="sig-name descname">ALGORITHM</code><em class="property"> = 'algorithm'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ALGORITHM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ASN">
+<code class="sig-name descname">ASN</code><em class="property"> = 'asn'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ASN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ASN_NAME">
+<code class="sig-name descname">ASN_NAME</code><em class="property"> = 'asn_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ASN_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.AUTH_SSL_RESPONSE">
+<code class="sig-name descname">AUTH_SSL_RESPONSE</code><em class="property"> = 'auth_ssl_response'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.AUTH_SSL_RESPONSE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.AUTH_TLS_RESPONSE">
+<code class="sig-name descname">AUTH_TLS_RESPONSE</code><em class="property"> = 'auth_tls_response'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.AUTH_TLS_RESPONSE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.AVAILABLE_CIPHERS">
+<code class="sig-name descname">AVAILABLE_CIPHERS</code><em class="property"> = 'available_ciphers'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.AVAILABLE_CIPHERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.AVAILABLE_COMPRESSION">
+<code class="sig-name descname">AVAILABLE_COMPRESSION</code><em class="property"> = 'available_compression'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.AVAILABLE_COMPRESSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.AVAILABLE_KEX">
+<code class="sig-name descname">AVAILABLE_KEX</code><em class="property"> = 'available_kex'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.AVAILABLE_KEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.AVAILABLE_MAC">
+<code class="sig-name descname">AVAILABLE_MAC</code><em class="property"> = 'available_mac'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.AVAILABLE_MAC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.BANNER">
+<code class="sig-name descname">BANNER</code><em class="property"> = 'banner'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.BANNER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.BLUEKEEP_VULNERABLE">
+<code class="sig-name descname">BLUEKEEP_VULNERABLE</code><em class="property"> = 'bluekeep_vulnerable'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.BLUEKEEP_VULNERABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.BROWSER_ERROR">
+<code class="sig-name descname">BROWSER_ERROR</code><em class="property"> = 'browser_error'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.BROWSER_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.BROWSER_TRUSTED">
+<code class="sig-name descname">BROWSER_TRUSTED</code><em class="property"> = 'browser_trusted'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.BROWSER_TRUSTED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.CERT_EXPIRATION_DATE">
+<code class="sig-name descname">CERT_EXPIRATION_DATE</code><em class="property"> = 'cert_expiration_date'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.CERT_EXPIRATION_DATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.CERT_EXPIRED">
+<code class="sig-name descname">CERT_EXPIRED</code><em class="property"> = 'cert_expired'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.CERT_EXPIRED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.CERT_ISSUE_DATE">
+<code class="sig-name descname">CERT_ISSUE_DATE</code><em class="property"> = 'cert_issue_date'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.CERT_ISSUE_DATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.CERT_LENGTH">
+<code class="sig-name descname">CERT_LENGTH</code><em class="property"> = 'cert_length'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.CERT_LENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.CERT_SERIAL_NUMBER">
+<code class="sig-name descname">CERT_SERIAL_NUMBER</code><em class="property"> = 'cert_serial_number'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.CERT_SERIAL_NUMBER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.CERT_VALID">
+<code class="sig-name descname">CERT_VALID</code><em class="property"> = 'cert_valid'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.CERT_VALID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.CIPHER_SUITE">
+<code class="sig-name descname">CIPHER_SUITE</code><em class="property"> = 'cipher_suite'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.CIPHER_SUITE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.CITY">
+<code class="sig-name descname">CITY</code><em class="property"> = 'city'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.CITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.CONTENT_LENGTH">
+<code class="sig-name descname">CONTENT_LENGTH</code><em class="property"> = 'content_length'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.CONTENT_LENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.CONTENT_TYPE">
+<code class="sig-name descname">CONTENT_TYPE</code><em class="property"> = 'content_type'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.CONTENT_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.COUNTY_FIPS">
+<code class="sig-name descname">COUNTY_FIPS</code><em class="property"> = 'county_fips'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.COUNTY_FIPS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.COUNTY_NAME">
+<code class="sig-name descname">COUNTY_NAME</code><em class="property"> = 'county_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.COUNTY_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.CVE20190708_VULNERABLE">
+<code class="sig-name descname">CVE20190708_VULNERABLE</code><em class="property"> = 'cve20190708_vulnerable'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.CVE20190708_VULNERABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DEVICE_MODEL">
+<code class="sig-name descname">DEVICE_MODEL</code><em class="property"> = 'device_model'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DEVICE_MODEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DEVICE_SECTOR">
+<code class="sig-name descname">DEVICE_SECTOR</code><em class="property"> = 'device_sector'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DEVICE_SECTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DEVICE_TYPE">
+<code class="sig-name descname">DEVICE_TYPE</code><em class="property"> = 'device_type'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DEVICE_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DEVICE_VENDOR">
+<code class="sig-name descname">DEVICE_VENDOR</code><em class="property"> = 'device_vendor'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DEVICE_VENDOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DEVICE_VERSION">
+<code class="sig-name descname">DEVICE_VERSION</code><em class="property"> = 'device_version'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DEVICE_VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DSS_DSA_PUBLIC_G">
+<code class="sig-name descname">DSS_DSA_PUBLIC_G</code><em class="property"> = 'dss_dsa_public_g'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DSS_DSA_PUBLIC_G" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DSS_DSA_PUBLIC_P">
+<code class="sig-name descname">DSS_DSA_PUBLIC_P</code><em class="property"> = 'dss_dsa_public_p'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DSS_DSA_PUBLIC_P" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DSS_DSA_PUBLIC_Q">
+<code class="sig-name descname">DSS_DSA_PUBLIC_Q</code><em class="property"> = 'dss_dsa_public_q'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DSS_DSA_PUBLIC_Q" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DSS_DSA_PUBLIC_Y">
+<code class="sig-name descname">DSS_DSA_PUBLIC_Y</code><em class="property"> = 'dss_dsa_public_y'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DSS_DSA_PUBLIC_Y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DSS_GENERATOR">
+<code class="sig-name descname">DSS_GENERATOR</code><em class="property"> = 'dss_generator'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DSS_GENERATOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DSS_GENERATOR_LENGTH">
+<code class="sig-name descname">DSS_GENERATOR_LENGTH</code><em class="property"> = 'dss_generator_length'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DSS_GENERATOR_LENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DSS_PRIME">
+<code class="sig-name descname">DSS_PRIME</code><em class="property"> = 'dss_prime'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DSS_PRIME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DSS_PRIME_LENGTH">
+<code class="sig-name descname">DSS_PRIME_LENGTH</code><em class="property"> = 'dss_prime_length'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DSS_PRIME_LENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DSS_PUBLIC_KEY">
+<code class="sig-name descname">DSS_PUBLIC_KEY</code><em class="property"> = 'dss_public_key'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DSS_PUBLIC_KEY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.DSS_PUBLIC_KEY_LENGTH">
+<code class="sig-name descname">DSS_PUBLIC_KEY_LENGTH</code><em class="property"> = 'dss_public_key_length'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.DSS_PUBLIC_KEY_LENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ECDSA_CURVE">
+<code class="sig-name descname">ECDSA_CURVE</code><em class="property"> = 'ecdsa_curve'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ECDSA_CURVE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ECDSA_CURVE25519">
+<code class="sig-name descname">ECDSA_CURVE25519</code><em class="property"> = 'ecdsa_curve25519'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ECDSA_CURVE25519" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_B">
+<code class="sig-name descname">ECDSA_PUBLIC_KEY_B</code><em class="property"> = 'ecdsa_public_key_b'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_B" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_GX">
+<code class="sig-name descname">ECDSA_PUBLIC_KEY_GX</code><em class="property"> = 'ecdsa_public_key_gx'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_GX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_GY">
+<code class="sig-name descname">ECDSA_PUBLIC_KEY_GY</code><em class="property"> = 'ecdsa_public_key_gy'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_GY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_LENGTH">
+<code class="sig-name descname">ECDSA_PUBLIC_KEY_LENGTH</code><em class="property"> = 'ecdsa_public_key_length'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_LENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_N">
+<code class="sig-name descname">ECDSA_PUBLIC_KEY_N</code><em class="property"> = 'ecdsa_public_key_n'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_N" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_P">
+<code class="sig-name descname">ECDSA_PUBLIC_KEY_P</code><em class="property"> = 'ecdsa_public_key_p'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_P" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_X">
+<code class="sig-name descname">ECDSA_PUBLIC_KEY_X</code><em class="property"> = 'ecdsa_public_key_x'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_X" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_Y">
+<code class="sig-name descname">ECDSA_PUBLIC_KEY_Y</code><em class="property"> = 'ecdsa_public_key_y'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ECDSA_PUBLIC_KEY_Y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_BYTES">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_BYTES</code><em class="property"> = 'ed25519_cert_public_key_bytes'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_BYTES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_DURATION">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_DURATION</code><em class="property"> = 'ed25519_cert_public_key_duration'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_DURATION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_KEYID">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_KEYID</code><em class="property"> = 'ed25519_cert_public_key_keyid'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_KEYID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_NONCE">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_NONCE</code><em class="property"> = 'ed25519_cert_public_key_nonce'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_NONCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_PRINCIPLES">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_PRINCIPLES</code><em class="property"> = 'ed25519_cert_public_key_principles'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_PRINCIPLES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_RAW">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_RAW</code><em class="property"> = 'ed25519_cert_public_key_raw'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_RAW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SERIAL">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_SERIAL</code><em class="property"> = 'ed25519_cert_public_key_serial'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SERIAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SHA256">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_SHA256</code><em class="property"> = 'ed25519_cert_public_key_sha256'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SHA256" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SIGKEY_BYTES">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_SIGKEY_BYTES</code><em class="property"> = 'ed25519_cert_public_key_sigkey_bytes'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SIGKEY_BYTES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SIGKEY_RAW">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_SIGKEY_RAW</code><em class="property"> = 'ed25519_cert_public_key_sigkey_raw'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SIGKEY_RAW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SIGKEY_SHA256">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_SIGKEY_SHA256</code><em class="property"> = 'ed25519_cert_public_key_sigkey_sha256'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SIGKEY_SHA256" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SIGKEY_VALUE">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_SIGKEY_VALUE</code><em class="property"> = 'ed25519_cert_public_key_sigkey_value'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SIGKEY_VALUE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SIG_RAW">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_SIG_RAW</code><em class="property"> = 'ed25519_cert_public_key_sig_raw'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_SIG_RAW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_TYPE_ID">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_TYPE_ID</code><em class="property"> = 'ed25519_cert_public_key_type_id'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_TYPE_ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_TYPE_NAME">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_TYPE_NAME</code><em class="property"> = 'ed25519_cert_public_key_type_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_TYPE_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_VALID_AFTER">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_VALID_AFTER</code><em class="property"> = 'ed25519_cert_public_key_valid_after'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_VALID_AFTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_VALID_BEFORE">
+<code class="sig-name descname">ED25519_CERT_PUBLIC_KEY_VALID_BEFORE</code><em class="property"> = 'ed25519_cert_public_key_valid_before'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CERT_PUBLIC_KEY_VALID_BEFORE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ED25519_CURVE25519">
+<code class="sig-name descname">ED25519_CURVE25519</code><em class="property"> = 'ed25519_curve25519'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ED25519_CURVE25519" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.FREAK_CIPHER_SUITE">
+<code class="sig-name descname">FREAK_CIPHER_SUITE</code><em class="property"> = 'freak_cipher_suite'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.FREAK_CIPHER_SUITE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.FREAK_VULNERABLE">
+<code class="sig-name descname">FREAK_VULNERABLE</code><em class="property"> = 'freak_vulnerable'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.FREAK_VULNERABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.GEO">
+<code class="sig-name descname">GEO</code><em class="property"> = 'geo'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.GEO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HANDSHAKE">
+<code class="sig-name descname">HANDSHAKE</code><em class="property"> = 'handshake'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HANDSHAKE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HOSTNAME">
+<code class="sig-name descname">HOSTNAME</code><em class="property"> = 'hostname'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HOSTNAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_CODE">
+<code class="sig-name descname">HTTP_CODE</code><em class="property"> = 'http_code'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_CODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_CONNECTION">
+<code class="sig-name descname">HTTP_CONNECTION</code><em class="property"> = 'http_connection'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_CONNECTION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_DATE">
+<code class="sig-name descname">HTTP_DATE</code><em class="property"> = 'http_date'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_DATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_INFO">
+<code class="sig-name descname">HTTP_INFO</code><em class="property"> = 'http_info'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_INFO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_IPV4">
+<code class="sig-name descname">HTTP_IPV4</code><em class="property"> = 'http_ipv4'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_IPV4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_IPV6">
+<code class="sig-name descname">HTTP_IPV6</code><em class="property"> = 'http_ipv6'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_IPV6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_NAME">
+<code class="sig-name descname">HTTP_NAME</code><em class="property"> = 'http_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_PORT">
+<code class="sig-name descname">HTTP_PORT</code><em class="property"> = 'http_port'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_PORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_PTR">
+<code class="sig-name descname">HTTP_PTR</code><em class="property"> = 'http_ptr'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_PTR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_REASON">
+<code class="sig-name descname">HTTP_REASON</code><em class="property"> = 'http_reason'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_REASON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_RESPONSE_TYPE">
+<code class="sig-name descname">HTTP_RESPONSE_TYPE</code><em class="property"> = 'http_response_type'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_RESPONSE_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.HTTP_TARGET">
+<code class="sig-name descname">HTTP_TARGET</code><em class="property"> = 'http_target'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.HTTP_TARGET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.IP">
+<code class="sig-name descname">IP</code><em class="property"> = 'ip'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.IP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISP_NAME">
+<code class="sig-name descname">ISP_NAME</code><em class="property"> = 'isp_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISP_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_BUSINESS_CATEGORY">
+<code class="sig-name descname">ISSUER_BUSINESS_CATEGORY</code><em class="property"> = 'issuer_business_category'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_BUSINESS_CATEGORY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_COMMON_NAME">
+<code class="sig-name descname">ISSUER_COMMON_NAME</code><em class="property"> = 'issuer_common_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_COMMON_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_COUNTRY">
+<code class="sig-name descname">ISSUER_COUNTRY</code><em class="property"> = 'issuer_country'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_COUNTRY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_EMAIL_ADDRESS">
+<code class="sig-name descname">ISSUER_EMAIL_ADDRESS</code><em class="property"> = 'issuer_email_address'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_EMAIL_ADDRESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_GIVEN_NAME">
+<code class="sig-name descname">ISSUER_GIVEN_NAME</code><em class="property"> = 'issuer_given_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_GIVEN_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_LOCALITY_NAME">
+<code class="sig-name descname">ISSUER_LOCALITY_NAME</code><em class="property"> = 'issuer_locality_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_LOCALITY_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_ORGANIZATION_NAME">
+<code class="sig-name descname">ISSUER_ORGANIZATION_NAME</code><em class="property"> = 'issuer_organization_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_ORGANIZATION_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_ORGANIZATION_UNIT_NAME">
+<code class="sig-name descname">ISSUER_ORGANIZATION_UNIT_NAME</code><em class="property"> = 'issuer_organization_unit_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_ORGANIZATION_UNIT_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_POSTAL_CODE">
+<code class="sig-name descname">ISSUER_POSTAL_CODE</code><em class="property"> = 'issuer_postal_code'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_POSTAL_CODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_SERIALNUMBER">
+<code class="sig-name descname">ISSUER_SERIALNUMBER</code><em class="property"> = 'issuer_serialnumber'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_SERIALNUMBER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_STATE_OR_PROVINCE_NAME">
+<code class="sig-name descname">ISSUER_STATE_OR_PROVINCE_NAME</code><em class="property"> = 'issuer_state_or_province_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_STATE_OR_PROVINCE_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_STREET_ADDRESS">
+<code class="sig-name descname">ISSUER_STREET_ADDRESS</code><em class="property"> = 'issuer_street_address'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_STREET_ADDRESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ISSUER_SURNAME">
+<code class="sig-name descname">ISSUER_SURNAME</code><em class="property"> = 'issuer_surname'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ISSUER_SURNAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.JARM">
+<code class="sig-name descname">JARM</code><em class="property"> = 'jarm'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.JARM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.KEY_ALGORITHM">
+<code class="sig-name descname">KEY_ALGORITHM</code><em class="property"> = 'key_algorithm'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.KEY_ALGORITHM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.LATITUDE">
+<code class="sig-name descname">LATITUDE</code><em class="property"> = 'latitude'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.LATITUDE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.LONGITUDE">
+<code class="sig-name descname">LONGITUDE</code><em class="property"> = 'longitude'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.LONGITUDE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.MD5_FINGERPRINT">
+<code class="sig-name descname">MD5_FINGERPRINT</code><em class="property"> = 'md5_fingerprint'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.MD5_FINGERPRINT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.MDNS_IPV4">
+<code class="sig-name descname">MDNS_IPV4</code><em class="property"> = 'mdns_ipv4'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.MDNS_IPV4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.MDNS_IPV6">
+<code class="sig-name descname">MDNS_IPV6</code><em class="property"> = 'mdns_ipv6'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.MDNS_IPV6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.MDNS_NAME">
+<code class="sig-name descname">MDNS_NAME</code><em class="property"> = 'mdns_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.MDNS_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.NAICS">
+<code class="sig-name descname">NAICS</code><em class="property"> = 'naics'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.NAICS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.PORT">
+<code class="sig-name descname">PORT</code><em class="property"> = 'port'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.PORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.PROTOCOL">
+<code class="sig-name descname">PROTOCOL</code><em class="property"> = 'protocol'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.PROTOCOL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.PUBLIC_KEY_MD5">
+<code class="sig-name descname">PUBLIC_KEY_MD5</code><em class="property"> = 'public_key_md5'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.PUBLIC_KEY_MD5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.PUBLIC_KEY_SHA1">
+<code class="sig-name descname">PUBLIC_KEY_SHA1</code><em class="property"> = 'public_key_sha1'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.PUBLIC_KEY_SHA1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.PUBLIC_KEY_SHA256">
+<code class="sig-name descname">PUBLIC_KEY_SHA256</code><em class="property"> = 'public_key_sha256'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.PUBLIC_KEY_SHA256" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.PUBLIC_KEY_SHA512">
+<code class="sig-name descname">PUBLIC_KEY_SHA512</code><em class="property"> = 'public_key_sha512'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.PUBLIC_KEY_SHA512" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.RDP_PROTOCOL">
+<code class="sig-name descname">RDP_PROTOCOL</code><em class="property"> = 'rdp_protocol'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.RDP_PROTOCOL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.REGION">
+<code class="sig-name descname">REGION</code><em class="property"> = 'region'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.REGION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.RSA_EXPONENT">
+<code class="sig-name descname">RSA_EXPONENT</code><em class="property"> = 'rsa_exponent'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.RSA_EXPONENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.RSA_GENERATOR">
+<code class="sig-name descname">RSA_GENERATOR</code><em class="property"> = 'rsa_generator'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.RSA_GENERATOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.RSA_GENERATOR_LENGTH">
+<code class="sig-name descname">RSA_GENERATOR_LENGTH</code><em class="property"> = 'rsa_generator_length'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.RSA_GENERATOR_LENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.RSA_LENGTH">
+<code class="sig-name descname">RSA_LENGTH</code><em class="property"> = 'rsa_length'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.RSA_LENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.RSA_MODULUS">
+<code class="sig-name descname">RSA_MODULUS</code><em class="property"> = 'rsa_modulus'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.RSA_MODULUS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.RSA_PRIME">
+<code class="sig-name descname">RSA_PRIME</code><em class="property"> = 'rsa_prime'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.RSA_PRIME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.RSA_PRIME_LENGTH">
+<code class="sig-name descname">RSA_PRIME_LENGTH</code><em class="property"> = 'rsa_prime_length'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.RSA_PRIME_LENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.RSA_PUBLIC_KEY">
+<code class="sig-name descname">RSA_PUBLIC_KEY</code><em class="property"> = 'rsa_public_key'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.RSA_PUBLIC_KEY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.RSA_PUBLIC_KEY_LENGTH">
+<code class="sig-name descname">RSA_PUBLIC_KEY_LENGTH</code><em class="property"> = 'rsa_public_key_length'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.RSA_PUBLIC_KEY_LENGTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.RSUBJECT_EMAIL_ADDRESS">
+<code class="sig-name descname">RSUBJECT_EMAIL_ADDRESS</code><em class="property"> = 'rsubject_email_address'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.RSUBJECT_EMAIL_ADDRESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SECTOR">
+<code class="sig-name descname">SECTOR</code><em class="property"> = 'sector'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SECTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SELECTED_CIPHER">
+<code class="sig-name descname">SELECTED_CIPHER</code><em class="property"> = 'selected_cipher'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SELECTED_CIPHER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SELECTED_COMPRESSION">
+<code class="sig-name descname">SELECTED_COMPRESSION</code><em class="property"> = 'selected_compression'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SELECTED_COMPRESSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SELECTED_KEX">
+<code class="sig-name descname">SELECTED_KEX</code><em class="property"> = 'selected_kex'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SELECTED_KEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SELECTED_MAC">
+<code class="sig-name descname">SELECTED_MAC</code><em class="property"> = 'selected_mac'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SELECTED_MAC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SELF_SIGNED">
+<code class="sig-name descname">SELF_SIGNED</code><em class="property"> = 'self_signed'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SELF_SIGNED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SERVERID_COMMENT">
+<code class="sig-name descname">SERVERID_COMMENT</code><em class="property"> = 'serverid_comment'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SERVERID_COMMENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SERVERID_RAW">
+<code class="sig-name descname">SERVERID_RAW</code><em class="property"> = 'serverid_raw'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SERVERID_RAW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SERVERID_SOFTWARE">
+<code class="sig-name descname">SERVERID_SOFTWARE</code><em class="property"> = 'serverid_software'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SERVERID_SOFTWARE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SERVERID_VERSION">
+<code class="sig-name descname">SERVERID_VERSION</code><em class="property"> = 'serverid_version'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SERVERID_VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SERVER_COOKIE">
+<code class="sig-name descname">SERVER_COOKIE</code><em class="property"> = 'server_cookie'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SERVER_COOKIE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SERVER_HOST_KEY">
+<code class="sig-name descname">SERVER_HOST_KEY</code><em class="property"> = 'server_host_key'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SERVER_HOST_KEY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SERVER_HOST_KEY_SHA256">
+<code class="sig-name descname">SERVER_HOST_KEY_SHA256</code><em class="property"> = 'server_host_key_sha256'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SERVER_HOST_KEY_SHA256" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SERVER_SIGNATURE_RAW">
+<code class="sig-name descname">SERVER_SIGNATURE_RAW</code><em class="property"> = 'server_signature_raw'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SERVER_SIGNATURE_RAW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SERVER_SIGNATURE_VALUE">
+<code class="sig-name descname">SERVER_SIGNATURE_VALUE</code><em class="property"> = 'server_signature_value'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SERVER_SIGNATURE_VALUE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SERVER_TYPE">
+<code class="sig-name descname">SERVER_TYPE</code><em class="property"> = 'server_type'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SERVER_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SERVICES">
+<code class="sig-name descname">SERVICES</code><em class="property"> = 'services'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SERVICES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SET_COOKIE">
+<code class="sig-name descname">SET_COOKIE</code><em class="property"> = 'set_cookie'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SET_COOKIE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SHA1_FINGERPRINT">
+<code class="sig-name descname">SHA1_FINGERPRINT</code><em class="property"> = 'sha1_fingerprint'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SHA1_FINGERPRINT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SHA256_FINGERPRINT">
+<code class="sig-name descname">SHA256_FINGERPRINT</code><em class="property"> = 'sha256_fingerprint'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SHA256_FINGERPRINT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SHA512_FINGERPRINT">
+<code class="sig-name descname">SHA512_FINGERPRINT</code><em class="property"> = 'sha512_fingerprint'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SHA512_FINGERPRINT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SIGNATURE_ALGORITHM">
+<code class="sig-name descname">SIGNATURE_ALGORITHM</code><em class="property"> = 'signature_algorithm'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SIGNATURE_ALGORITHM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SOURCE">
+<code class="sig-name descname">SOURCE</code><em class="property"> = 'source'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SOURCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SSLV3_SUPPORTED">
+<code class="sig-name descname">SSLV3_SUPPORTED</code><em class="property"> = 'sslv3_supported'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SSLV3_SUPPORTED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SSL_VERSION">
+<code class="sig-name descname">SSL_VERSION</code><em class="property"> = 'ssl_version'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SSL_VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_BUSINESS_CATEGORY">
+<code class="sig-name descname">SUBJECT_BUSINESS_CATEGORY</code><em class="property"> = 'subject_business_category'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_BUSINESS_CATEGORY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_COMMON_NAME">
+<code class="sig-name descname">SUBJECT_COMMON_NAME</code><em class="property"> = 'subject_common_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_COMMON_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_COUNTRY">
+<code class="sig-name descname">SUBJECT_COUNTRY</code><em class="property"> = 'subject_country'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_COUNTRY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_EMAIL_ADDRESS">
+<code class="sig-name descname">SUBJECT_EMAIL_ADDRESS</code><em class="property"> = 'subject_email_address'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_EMAIL_ADDRESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_GIVEN_NAME">
+<code class="sig-name descname">SUBJECT_GIVEN_NAME</code><em class="property"> = 'subject_given_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_GIVEN_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_LOCALITY_NAME">
+<code class="sig-name descname">SUBJECT_LOCALITY_NAME</code><em class="property"> = 'subject_locality_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_LOCALITY_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_ORGANIZATION_NAME">
+<code class="sig-name descname">SUBJECT_ORGANIZATION_NAME</code><em class="property"> = 'subject_organization_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_ORGANIZATION_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_ORGANIZATION_UNIT_NAME">
+<code class="sig-name descname">SUBJECT_ORGANIZATION_UNIT_NAME</code><em class="property"> = 'subject_organization_unit_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_ORGANIZATION_UNIT_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_POSTAL_CODE">
+<code class="sig-name descname">SUBJECT_POSTAL_CODE</code><em class="property"> = 'subject_postal_code'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_POSTAL_CODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_SERIAL_NUMBER">
+<code class="sig-name descname">SUBJECT_SERIAL_NUMBER</code><em class="property"> = 'subject_serial_number'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_SERIAL_NUMBER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_STATE_OR_PROVINCE_NAME">
+<code class="sig-name descname">SUBJECT_STATE_OR_PROVINCE_NAME</code><em class="property"> = 'subject_state_or_province_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_STATE_OR_PROVINCE_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_STREET_ADDRESS">
+<code class="sig-name descname">SUBJECT_STREET_ADDRESS</code><em class="property"> = 'subject_street_address'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_STREET_ADDRESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SUBJECT_SURNAME">
+<code class="sig-name descname">SUBJECT_SURNAME</code><em class="property"> = 'subject_surname'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SUBJECT_SURNAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SYSDESC">
+<code class="sig-name descname">SYSDESC</code><em class="property"> = 'sysdesc'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SYSDESC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.SYSNAME">
+<code class="sig-name descname">SYSNAME</code><em class="property"> = 'sysname'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.SYSNAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.TAG">
+<code class="sig-name descname">TAG</code><em class="property"> = 'tag'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.TAG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.TIMESTAMP">
+<code class="sig-name descname">TIMESTAMP</code><em class="property"> = 'timestamp'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.TIMESTAMP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.TLSV13_CIPHER">
+<code class="sig-name descname">TLSV13_CIPHER</code><em class="property"> = 'tlsv13_cipher'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.TLSV13_CIPHER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.TLSV13_SUPPORT">
+<code class="sig-name descname">TLSV13_SUPPORT</code><em class="property"> = 'tlsv13_support'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.TLSV13_SUPPORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.TRANSFER_ENCODING">
+<code class="sig-name descname">TRANSFER_ENCODING</code><em class="property"> = 'transfer_encoding'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.TRANSFER_ENCODING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.TYPE">
+<code class="sig-name descname">TYPE</code><em class="property"> = 'type'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.USERAUTH_METHODS">
+<code class="sig-name descname">USERAUTH_METHODS</code><em class="property"> = 'userauth_methods'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.USERAUTH_METHODS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.VALIDATION_LEVEL">
+<code class="sig-name descname">VALIDATION_LEVEL</code><em class="property"> = 'validation_level'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.VALIDATION_LEVEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.VERSION">
+<code class="sig-name descname">VERSION</code><em class="property"> = 'version'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.WORKSTATION_INFO">
+<code class="sig-name descname">WORKSTATION_INFO</code><em class="property"> = 'workstation_info'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.WORKSTATION_INFO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.WORKSTATION_IPV4">
+<code class="sig-name descname">WORKSTATION_IPV4</code><em class="property"> = 'workstation_ipv4'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.WORKSTATION_IPV4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.WORKSTATION_IPV6">
+<code class="sig-name descname">WORKSTATION_IPV6</code><em class="property"> = 'workstation_ipv6'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.WORKSTATION_IPV6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.WORKSTATION_NAME">
+<code class="sig-name descname">WORKSTATION_NAME</code><em class="property"> = 'workstation_name'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.WORKSTATION_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.WWW_AUTHENTICATE">
+<code class="sig-name descname">WWW_AUTHENTICATE</code><em class="property"> = 'www_authenticate'</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.WWW_AUTHENTICATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="shadowapi.resources.SSLQuery.ssl_query">
+<code class="sig-name descname">ssl_query</code><em class="property"> = ['algorithm', 'asn', 'asn_name', 'auth_ssl_response', 'auth_tls_response', 'available_ciphers', 'available_compression', 'available_kex', 'available_mac', 'banner', 'bluekeep_vulnerable', 'browser_error', 'browser_trusted', 'cert_expiration_date', 'cert_expired', 'cert_issue_date', 'cert_length', 'cert_serial_number', 'cert_valid', 'cipher_suite', 'city', 'content_length', 'content_type', 'county_fips', 'county_name', 'cve20190708_vulnerable', 'device_model', 'device_sector', 'device_type', 'device_vendor', 'device_version', 'dss_dsa_public_g', 'dss_dsa_public_p', 'dss_dsa_public_q', 'dss_dsa_public_y', 'dss_generator', 'dss_generator_length', 'dss_prime', 'dss_prime_length', 'dss_public_key', 'dss_public_key_length', 'ecdsa_curve', 'ecdsa_curve25519', 'ecdsa_public_key_b', 'ecdsa_public_key_gx', 'ecdsa_public_key_gy', 'ecdsa_public_key_length', 'ecdsa_public_key_n', 'ecdsa_public_key_p', 'ecdsa_public_key_x', 'ecdsa_public_key_y', 'ed25519_cert_public_key_bytes', 'ed25519_cert_public_key_duration', 'ed25519_cert_public_key_keyid', 'ed25519_cert_public_key_nonce', 'ed25519_cert_public_key_principles', 'ed25519_cert_public_key_raw', 'ed25519_cert_public_key_serial', 'ed25519_cert_public_key_sha256', 'ed25519_cert_public_key_sig_raw', 'ed25519_cert_public_key_sigkey_bytes', 'ed25519_cert_public_key_sigkey_raw', 'ed25519_cert_public_key_sigkey_sha256', 'ed25519_cert_public_key_sigkey_value', 'ed25519_cert_public_key_type_id', 'ed25519_cert_public_key_type_name', 'ed25519_cert_public_key_valid_after', 'ed25519_cert_public_key_valid_before', 'ed25519_curve25519', 'freak_cipher_suite', 'freak_vulnerable', 'geo', 'handshake', 'hostname', 'http_code', 'http_connection', 'http_date', 'http_info', 'http_ipv4', 'http_ipv6', 'http_name', 'http_port', 'http_ptr', 'http_reason', 'http_response_type', 'http_target', 'ip', 'isp_name', 'issuer_business_category', 'issuer_common_name', 'issuer_country', 'issuer_email_address', 'issuer_given_name', 'issuer_locality_name', 'issuer_organization_name', 'issuer_organization_unit_name', 'issuer_postal_code', 'issuer_serialnumber', 'issuer_state_or_province_name', 'issuer_street_address', 'issuer_surname', 'jarm', 'key_algorithm', 'latitude', 'longitude', 'md5_fingerprint', 'mdns_ipv4', 'mdns_ipv6', 'mdns_name', 'naics', 'port', 'protocol', 'public_key_md5', 'public_key_sha1', 'public_key_sha256', 'public_key_sha512', 'rdp_protocol', 'region', 'rsa_exponent', 'rsa_generator', 'rsa_generator_length', 'rsa_length', 'rsa_modulus', 'rsa_prime', 'rsa_prime_length', 'rsa_public_key', 'rsa_public_key_length', 'rsubject_email_address', 'sector', 'selected_cipher', 'selected_compression', 'selected_kex', 'selected_mac', 'self_signed', 'server_cookie', 'server_host_key', 'server_host_key_sha256', 'server_signature_raw', 'server_signature_value', 'server_type', 'serverid_comment', 'serverid_raw', 'serverid_software', 'serverid_version', 'services', 'set_cookie', 'sha1_fingerprint', 'sha256_fingerprint', 'sha512_fingerprint', 'signature_algorithm', 'source', 'ssl_version', 'sslv3_supported', 'subject_business_category', 'subject_common_name', 'subject_country', 'subject_email_address', 'subject_given_name', 'subject_locality_name', 'subject_organization_name', 'subject_organization_unit_name', 'subject_postal_code', 'subject_serial_number', 'subject_state_or_province_name', 'subject_street_address', 'subject_surname', 'sysdesc', 'sysname', 'tag', 'timestamp', 'tlsv13_cipher', 'tlsv13_support', 'transfer_encoding', 'type', 'userauth_methods', 'validation_level', 'version', 'workstation_info', 'workstation_ipv4', 'workstation_ipv6', 'workstation_name', 'www_authenticate']</em><a class="headerlink" href="#shadowapi.resources.SSLQuery.ssl_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-shadowapi">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-shadowapi" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules.html" class="btn btn-neutral float-right" title="shadowapi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Shadowserver API’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, George Haraksin
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
