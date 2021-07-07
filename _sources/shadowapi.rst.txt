@@ -20,36 +20,6 @@ shadowapi.resources module
    :undoc-members:
    :show-inheritance:
 
-Query Filters
-^^^^^^^^^^^^^
-
-Query filters for report data able to be used for correct spelling and convenience.
-
-.. literalinclude:: ../shadowapi/resources.py
-   :language: python
-   :linenos:
-   :lines: 4-59
-
-Report Types
-^^^^^^^^^^^^
-
-Report type listing able to be used for correct spelling and convenience.
-
-.. literalinclude:: ../shadowapi/resources.py
-   :language: python
-   :linenos:
-   :lines: 121-146
-
-SSL Query
-^^^^^^^^^
-
-SSL Query filters static class members able to be used for correct spelling and convenience.
-
-.. literalinclude:: ../shadowapi/resources.py
-   :language: python
-   :linenos:
-   :lines: 178-360
-
 Module contents
 ---------------
 
