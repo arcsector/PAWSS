@@ -13,7 +13,6 @@ This is the API wrapper for Shadowserver's v2 API. For more information, visit t
    :caption: Contents:
 
    shadowapi
-   modules
 
 
 Indices and tables
