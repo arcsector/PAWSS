@@ -6,6 +6,8 @@
 Welcome to Shadowserver API's documentation!
 ============================================
 
+This is the API wrapper for Shadowserver's v2 API. For more information, visit the official `Shadowserver API Documentation <https://www.shadowserver.org/what-we-do/network-reporting/api-documentation/>`_.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
