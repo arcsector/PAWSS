@@ -10,4 +10,4 @@ See the docs for how to use. For more information, visit the official [Shadowser
 
 - [X] Create docs
 - [X] Create tests
-- [ ] Create module
+- [x] Create module

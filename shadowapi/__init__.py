@@ -1,1 +1,2 @@
-from . import resources, call_api
+from .call_api import ShadowAPI, Config
+from .resources import *

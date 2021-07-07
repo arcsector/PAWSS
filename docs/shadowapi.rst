@@ -20,7 +20,6 @@ shadowapi.resources module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 

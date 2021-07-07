@@ -5,7 +5,6 @@ import json
 import requests
 from datetime import date
 
-from requests.models import Response
 from .resources import QueryFilters, SSLQuery, ReportTypes
 
 class Config:
@@ -97,7 +96,7 @@ class ShadowAPI:
         if date_end: date_ = date_ + ':' + date_end.strftime("%Y-%m-%d")
         return date_
 
-    def api_call(self, endpoint: str, request: dict = {}) -> list or requests.Response:
+    def api_call(self, endpoint: str, request: dict = {}) -> list or str:
         """Call the specified api endpoint with a request dictionary.
 
         Args:
@@ -115,7 +114,7 @@ class ShadowAPI:
         request_string = json.dumps(request)
 
         # cache secret bytes
-        if not self.secret_bytes:
+        if not hasattr(self, 'secret_bytes'):
             self.secret_bytes = bytes(str(self.config.secret), 'latin-1')
 
         request_bytes = bytes(request_string, 'latin-1')
@@ -130,13 +129,13 @@ class ShadowAPI:
         try:
             resp = response.json()
         except:
-            print("Unable to convert response to JSON")
+            resp = response.text
         return resp
 
     def set_config(self, key: str, secret: str, uri: str = "https://transform.shadowserver.org/api2/") -> None:
         self.config = Config(key, secret, uri)
 
-    def ping(self) -> list or requests.Response:
+    def ping(self) -> list or str:
         """Ping the server to check credentials and API connectivity
 
         Returns:
@@ -144,7 +143,7 @@ class ShadowAPI:
         """
         return self.api_call('test/ping')
 
-    def keyinfo(self) -> list or requests.Response:
+    def keyinfo(self) -> list or str:
         """Check info on user associated with the key
 
         Returns:
@@ -152,7 +151,7 @@ class ShadowAPI:
         """
         return self.api_call('key/info')
 
-    def report_subscribed(self) -> list or requests.Response:
+    def report_subscribed(self) -> list or str:
         """Check subscribed reports
 
         Returns:
@@ -160,7 +159,7 @@ class ShadowAPI:
         """
         return self.api_call('reports/subscribed')
 
-    def report_types(self) -> list or requests.Response:
+    def report_types(self) -> list or str:
         """Check all possible report types
 
         Returns:
@@ -168,7 +167,7 @@ class ShadowAPI:
         """
         return self.api_call('reports/types')
 
-    def report_list(self, limit: int = None, type_: str = None, reports: list = None, date_: date = None, date_end: date = None) -> list or requests.Response:
+    def report_list(self, limit: int = None, type_: str = None, reports: list = None, date_: date = None, date_end: date = None) -> list or str:
         """List all reports
 
         Args:
@@ -191,7 +190,7 @@ class ShadowAPI:
 
     def report_download(self, id_: str = None, report: str = None, limit: int = None, 
         type_: str = None, date_: date = None, date_end: date = None
-        ) -> list or requests.Response:
+        ) -> list or str:
         """Downloads details on reports
 
         Args:
@@ -210,12 +209,11 @@ class ShadowAPI:
         req_dict = self.check_valid(req_dict, 
             [("id", id_), ("limit", limit), ("report", report), ("date", date_)]
         )
-        data = self.api_call("reports/download")
-        print(data.content)
-        print(data.apparent_encoding)
+        data = self.api_call("reports/download", req_dict)
         return data
 
-    def report_stats(self, report: str, type_: str, date_: date = None, date_end: date = None) -> list or requests.Response:
+    def report_stats(self, report: str = None, type_: str = None, 
+        date_: date = None, date_end: date = None) -> list or str:
         """Allows looking through the history of the statistics of the different reports.
 
         Args:
@@ -236,10 +234,10 @@ class ShadowAPI:
         return self.api_call("reports/stats", req_dict)
 
     def report_query(self, query: dict, limit: int, page: int = 1, sort: str = None, 
-        date_: str = None, date_end: date = None, facet: str = None) -> list or requests.Response:
+        date_: str = None, date_end: date = None, facet: str = None) -> list or str:
         """Queries the report list for reports with specific attributes
 
-        Query must be one of the filters found in :class:`accepted_query_filters.QueryFilters`.
+        Query must be one of the filters found in :class:`resources.QueryFilters`.
         As a convenience, each filter is listed in both attribute and list format
 
         Args:
@@ -266,7 +264,7 @@ class ShadowAPI:
         )
         return self.api_call("reports/query", req_dict)
 
-    def malware(self, hashlist: list) -> list or requests.Response:
+    def malware(self, hashlist: list) -> list or str:
         """Get malware info for a list of hashes
 
         Args:
@@ -277,7 +275,7 @@ class ShadowAPI:
         """
         return self.api_call("research/malware-info", {"sample": hashlist})
         
-    def trusted_program(self, hash_: str) -> list or requests.Response:
+    def trusted_program(self, hash_: str) -> list or str:
         """Get program info for a hash
 
         Args:
@@ -288,7 +286,7 @@ class ShadowAPI:
         """
         return self.api_call("research/trusted-program", {"sample": hash_})
 
-    def network(self, origin: str = None, peer: str = None, prefix: str = None, query: str = None) -> list or requests.Response:
+    def network(self, origin: str = None, peer: str = None, prefix: str = None, query: str = None) -> list or str:
         """Get network info on network IoC's
 
         Args:
@@ -309,7 +307,7 @@ class ShadowAPI:
 
     def ssl(self, query: dict, page: int = 1, date_: str = None,
         date_end: date = None, limit: int = None
-        ) -> list or requests.Response:
+        ) -> list or str:
         """SSL IoC query
 
         Args:
@@ -324,7 +322,7 @@ class ShadowAPI:
             ValueError: Raised if Query was not a valid filter for SSL IoCs.
 
         Returns:
-            list or requests.Response: IoC data response.
+            list or str: IoC data response.
         """
         req_dict = {}
         if date_: date_ = self.date_eval(date_, date_end)
