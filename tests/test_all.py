@@ -1,7 +1,5 @@
-import json
-from ..call_api import Config, ShadowAPI
-from ..resources import ReportTypes
-from datetime import date, timedelta
+from shadowapi.call_api import ShadowAPI
+from datetime import date
 from time import sleep
 import pytest
 

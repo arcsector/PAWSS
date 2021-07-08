@@ -1,12 +1,12 @@
 import json
-from ..call_api import Config, ShadowAPI
+from shadowapi.call_api import Config, ShadowAPI
 from datetime import date, timedelta
 from time import sleep
 import pytest
 
 @pytest.fixture(scope="session")
 def import_creds() -> Config:
-    config = json.loads(open("shadowapi/tests/conf.json", 'r').read())
+    config = json.loads(open("tests/conf.json", 'r').read())
     c = Config(**config)
     return c
 
