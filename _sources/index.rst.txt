@@ -35,6 +35,7 @@ To import and use the module, run:
    :maxdepth: 2
    :caption: Contents:
 
+   download
    shadowapi
 
 
