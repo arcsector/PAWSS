@@ -1,5 +1,5 @@
-shadowapi package
-=================
+API Reference
+=============
 
 Submodules
 ----------
