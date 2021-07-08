@@ -29,6 +29,14 @@ To import and use the module, run:
    from shadowapi import Config, ShadowAPI
    from shadowapi import ReportTypes, QueryFilters, SSLQuery
 
+   config = {
+    "key": "AAA-AAA",
+    "secret": "BBB-CCC",
+    "uri": "https://transform.shadowserver.org/api2/"
+   }
+
+   c = Config(**config)
+   S = ShadowAPI(c)
 
 
 .. toctree::
