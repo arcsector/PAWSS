@@ -29,7 +29,7 @@ def test_reports(S: ShadowAPI, date_since: date, date_today: date):
     r = S.report_download(id_ = report_list[0]['id'], limit = 3)
     assert type(r) in (dict, list)
 
-    r = S.report_query(query = {'geo': 'us'}, date_=date_since, date_end=date_today, limit=10)
+    r = S.report_query(query = {'type': 'scan'}, date_=date_since, date_end=date_today, limit=10)
     assert type(r) in (dict, list)
     sleep(1)
 
