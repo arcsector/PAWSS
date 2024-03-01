@@ -1,6 +1,7 @@
 .vscode
 test.py
 *.json
+.pypirc
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
