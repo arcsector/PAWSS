@@ -541,4 +541,4 @@ class SSLQuery:
         "workstation_ipv6",
         "workstation_name",
         "www_authenticate"
-]
+    ]
