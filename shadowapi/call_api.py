@@ -4,6 +4,7 @@ import hashlib
 import json
 import requests
 from datetime import date
+import csv 
 
 from .resources import QueryFilters, SSLQuery, ReportTypes
 
@@ -188,29 +189,30 @@ class ShadowAPI:
         )
         return self.api_call('reports/list', req_dict)
 
-    def report_download(self, id_: str = None, report: str = None, limit: int = None, 
-        type_: str = None, date_: date = None, date_end: date = None
-        ) -> list or str:
+    def report_download(self, id_: str = None) -> list or str:
         """Downloads details on reports
 
         Args:
             id_ (str, optional): ID of report. Defaults to None.
-            report (str, optional): Name of report. Defaults to None.
-            limit (int, optional): Limit on number of reports. Defaults to None.
-            date_ (date, optional): Date to search reports for. Defaults to None.
-            date_end (date, optional): Date to search reports since ``date_``; should be 
-                later than ``date_``. Defaults to None.
 
         Returns:
             list: List of report JSON
         """
-        req_dict = {}
-        if date_: date_ = self.date_eval(date_, date_end)
-        req_dict = self.check_valid(req_dict, 
-            [("id", id_), ("limit", limit), ("report", report), ("date", date_)]
-        )
-        data = self.api_call("reports/download", req_dict)
-        return data
+        
+        if not id_: 
+            return "Missing ID"
+
+        url = f"https://dl.shadowserver.org/{id_}"
+
+        with requests.get(url, stream=True, timeout=120) as r:
+            try:
+                r.raise_for_status()
+            except requests.HTTPError as e:
+                return r.text
+        
+            lines = r.iter_lines(decode_unicode=True)
+            reader = csv.DictReader(lines)
+            return list(reader)
 
     def report_stats(self, report: str = None, type_: str = None, 
         date_: date = None, date_end: date = None) -> list or str:
