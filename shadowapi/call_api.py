@@ -193,7 +193,7 @@ class ShadowAPI:
         """Downloads details on reports
 
         Args:
-            id_ (str): ID of report
+            id_ (str): ID of report (mandatory)
 
         Returns:
             list: List of report JSON
