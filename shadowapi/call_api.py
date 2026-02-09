@@ -189,27 +189,20 @@ class ShadowAPI:
         )
         return self.api_call('reports/list', req_dict)
 
-    def report_download(self, id_: str = None) -> list or str:
+    def report_download(self, id_: str) -> list or str:
         """Downloads details on reports
 
         Args:
-            id_ (str, optional): ID of report. Defaults to None.
+            id_ (str): ID of report
 
         Returns:
             list: List of report JSON
         """
-        
-        if not id_: 
-            return "Missing ID"
-
         url = f"https://dl.shadowserver.org/{id_}"
 
         with requests.get(url, stream=True, timeout=120) as r:
-            try:
-                r.raise_for_status()
-            except requests.HTTPError as e:
-                return r.text
-        
+            r.raise_for_status()
+                   
             lines = r.iter_lines(decode_unicode=True)
             reader = csv.DictReader(lines)
             return list(reader)
