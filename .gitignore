@@ -2,6 +2,7 @@
 test.py
 *.json
 .pypirc
+api_utils.wiki/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

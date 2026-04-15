@@ -124,7 +124,7 @@ class ShadowAPI:
         hmac2 = hmac_generator.hexdigest()
 
         req = requests.session()
-        response = req.post(url, data=request_bytes, headers={'HMAC2': hmac2}, timeout=self.TIMEOUT)
+        response = req.post(url, data=request_string, headers={'HMAC2': hmac2}, timeout=self.TIMEOUT)
 
         resp = response
         try:
@@ -281,6 +281,25 @@ class ShadowAPI:
         """
         return self.api_call("research/trusted-program", {"sample": hash_})
 
+    def asn(self, origin: str = None, peer: str = None, prefix: str = None, query: str = None) -> list or str:
+        """Get network address and prefix info on routing details for a given address or ASN
+
+        Args:
+            origin (str, optional): IoC as origin ASN. Defaults to None.
+            peer (str, optional): IoC as peer ASN. Defaults to None.
+            prefix (str, optional): IoC as ASN prefix. Defaults to None.
+            query (str, optional): IoC by ASN ID. Defaults to None.
+
+        Returns:
+            list or :class:`requests.Response`: JSON data on the IoC
+        """
+        argument = {}
+        argument = self.check_valid(argument, 
+            [("origin", origin), ("peer", peer), ("prefix", prefix), ("query", query)]
+        )
+        return self.api_call("net/asn", argument)
+
+
     def network(self, origin: str = None, peer: str = None, prefix: str = None, query: str = None) -> list or str:
         """Get network info on network IoC's
 
@@ -293,7 +312,6 @@ class ShadowAPI:
         Returns:
             list or :class:`requests.Response`: JSON data on the IoC
         """
-        sess = requests.Session()
         argument = {}
         argument = self.check_valid(argument, 
             [("origin", origin), ("peer", peer), ("prefix", prefix), ("query", query)]
