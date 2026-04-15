@@ -207,7 +207,7 @@ class ShadowAPI:
             reader = csv.DictReader(lines)
             return list(reader)
 
-    def report_stats(self, report: str = None, type_: str = None, 
+    def report_stats(self, report: str = None, type_: str = None,
         date_: date = None, date_end: date = None) -> list or str:
         """Allows looking through the history of the statistics of the different reports.
 
@@ -215,7 +215,7 @@ class ShadowAPI:
             report (Union[str, list]): Report names
             type_ (Union[str, list]): Types of report to get
             date_ (date): Date to get reports with
-            date_end (date, optional): Date to get reports with since ``date_``; should be 
+            date_end (date, optional): Date to get reports with since ``date_``; should be
                 later than ``date_``. Defaults to None.
 
         Returns:
@@ -223,10 +223,37 @@ class ShadowAPI:
         """
         req_dict = {}
         if date_: date_ = self.date_eval(date_, date_end)
-        req_dict = self.check_valid(req_dict, 
+        req_dict = self.check_valid(req_dict,
             [("type", type_), ("report", report), ("date", date_)]
         )
         return self.api_call("reports/stats", req_dict)
+
+    def report_device_info(self, query: dict) -> list or str:
+        """Provides device details for a given IP
+
+        Query must contain one attribute that matches your organization's report filters.
+        Available query fields: ip, asn, geo
+
+        Args:
+            query (dict): Dictionary with search fields (ip, asn, geo)
+
+        Returns:
+            dict: Device information including device_type, device_sector, device_vendor, etc.
+        """
+        req_dict = {"query": query}
+        return self.api_call("reports/device-info", req_dict)
+
+    def report_schema(self, type_: str) -> list or str:
+        """Obtain JSON schema for a given report type
+
+        Args:
+            type_ (str): Report type (e.g., "scan-snmp", "scan_http")
+
+        Returns:
+            dict: JSON schema defining the fields and their types for the report
+        """
+        req_dict = {"type": type_}
+        return self.api_call("reports/schema", req_dict)
 
     def report_query(self, query: dict, limit: int, page: int = 1, sort: str = None, 
         date_: str = None, date_end: date = None, facet: str = None) -> list or str:
@@ -260,7 +287,7 @@ class ShadowAPI:
         return self.api_call("reports/query", req_dict)
 
     def malware(self, hashlist: list) -> list or str:
-        """Get malware info for a list of hashes
+        """Get malware info for a list of ha`she`s
 
         Args:
             hashlist (list): list of hashes
@@ -317,34 +344,6 @@ class ShadowAPI:
             [("origin", origin), ("peer", peer), ("prefix", prefix), ("query", query)]
         )
         return self.api_call("research/asn", argument)
-
-    def ssl(self, query: dict, page: int = 1, date_: str = None,
-        date_end: date = None, limit: int = None
-        ) -> list or str:
-        """SSL IoC query
-
-        Args:
-            query (dict): Dictionary query parameters to pass
-            page (int, optional): Pagination if result set is larger than 1000. Defaults to 1.
-            date_ (date, optional): Date to get SSL data from
-            date_end (date, optional): Date to get SSL data since ``date_``; should be
-                later than ``date_``. Defaults to None.
-            limit (int, optional): IoC return limit. Defaults to None which is 1000.
-
-        Raises:
-            ValueError: Raised if Query was not a valid filter for SSL IoCs.
-
-        Returns:
-            list or str: IoC data response.
-        """
-        req_dict = {}
-        if date_: date_ = self.date_eval(date_, date_end)
-        if [q for q in query.keys() if q not in SSLQuery.ssl_query]:
-            raise ValueError("Query was not a valid filter")
-        req_dict = self.check_valid(req_dict,
-                [("query", query), ("page", page), ("date", date_), ("limit", limit)]
-        )
-        return self.api_call("scan/ssl", req_dict)
 
     def honeypot_common_vulnerabilities(self, date_: date = None, date_end: date = None, limit: int = None) -> list or str:
         """Get honeypot CVE statistics
@@ -409,3 +408,108 @@ class ShadowAPI:
                  ("geo", geo), ("limit", limit)]
         )
         return self.api_call("honeypot/vulnerability-count", req_dict)
+
+    def scan_ssl(self, query: dict, page: int = 1, date_: str = None,
+        date_end: date = None, limit: int = None
+        ) -> list or str:
+        """SSL IoC query
+
+        Args:
+            query (dict): Dictionary query parameters to pass
+            page (int, optional): Pagination if result set is larger than 1000. Defaults to 1.
+            date_ (date, optional): Date to get SSL data from
+            date_end (date, optional): Date to get SSL data since ``date_``; should be
+                later than ``date_``. Defaults to None.
+            limit (int, optional): IoC return limit. Defaults to None which is 1000.
+
+        Raises:
+            ValueError: Raised if Query was not a valid filter for SSL IoCs.
+
+        Returns:
+            list or str: IoC data response.
+        """
+        req_dict = {}
+        if date_: date_ = self.date_eval(date_, date_end)
+        if [q for q in query.keys() if q not in SSLQuery.ssl_query]:
+            raise ValueError("Query was not a valid filter")
+        req_dict = self.check_valid(req_dict,
+                [("query", query), ("page", page), ("date", date_), ("limit", limit)]
+        )
+        return self.api_call("scan/ssl", req_dict)
+
+    def scan_network(self) -> list or str:
+        """Returns a list of CIDR blocks Shadowserver uses for network scans
+
+        Returns:
+            list: List of CIDR blocks
+        """
+        return self.api_call("scan/network")
+
+    def scan_cve_list(self) -> list or str:
+        """Returns the list of CVEs identified during network scans
+
+        Returns:
+            list: List of CVE identifiers
+        """
+        return self.api_call("scan/cve-list")
+
+    def scan_target_update(self, data: str) -> list or str:
+        """Update the domain target list for an organization
+
+        Args:
+            data (str): Target contents containing one or more fully qualified domain names
+                separated by commas, spaces, or newlines
+
+        Returns:
+            dict: Dictionary containing result details with accepted count
+        """
+        req_dict = {"data": data}
+        return self.api_call("scan/target-update", req_dict)
+
+    def filters_cidr_contents(self) -> list or str:
+        """Returns the contents for the linked Organization's CIDR report filter
+
+        Returns:
+            dict: Dictionary containing the filter data
+        """
+        return self.api_call("filters/cidr-contents")
+
+    def filters_cidr_update(self, data: str, dry_run: bool = None) -> list or str:
+        """Update the linked Organization's CIDR report filter
+
+        Args:
+            data (str): Filter contents containing one or more CIDRs separated by commas, spaces, or newlines.
+                IPv4 CIDRs must be smaller than /24. IPv6 CIDRs must be /128.
+            dry_run (bool, optional): Perform a trial run with no changes made. Defaults to None.
+
+        Returns:
+            dict: Dictionary containing result details with accepted and rejected counts
+        """
+        req_dict = {"data": data}
+        if dry_run is not None:
+            req_dict["dry-run"] = dry_run
+        return self.api_call("filters/cidr-update", req_dict)
+
+    def filters_rhost_contents(self) -> list or str:
+        """Returns the contents for the linked Organization's RHost report filter
+
+        Returns:
+            dict: Dictionary containing the filter data
+        """
+        return self.api_call("filters/rhost-contents")
+
+    def filters_rhost_update(self, data: str, dry_run: bool = None) -> list or str:
+        """Update the linked Organization's RHost report filter
+
+        Args:
+            data (str): Filter contents containing one or more reverse order domains separated by commas,
+                spaces, or newlines. Reverse domains must contain at least two elements and end with '.'.
+            dry_run (bool, optional): Perform a trial run with no changes made. Defaults to None.
+
+        Returns:
+            dict: Dictionary containing result details with accepted and rejected counts
+        """
+        req_dict = {"data": data}
+        if dry_run is not None:
+            req_dict["dry-run"] = dry_run
+        return self.api_call("filters/rhost-update", req_dict)
