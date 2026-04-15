@@ -327,7 +327,7 @@ class ShadowAPI:
             query (dict): Dictionary query parameters to pass
             page (int, optional): Pagination if result set is larger than 1000. Defaults to 1.
             date_ (date, optional): Date to get SSL data from
-            date_end (date, optional): Date to get SSL data since ``date_``; should be 
+            date_end (date, optional): Date to get SSL data since ``date_``; should be
                 later than ``date_``. Defaults to None.
             limit (int, optional): IoC return limit. Defaults to None which is 1000.
 
@@ -341,7 +341,71 @@ class ShadowAPI:
         if date_: date_ = self.date_eval(date_, date_end)
         if [q for q in query.keys() if q not in SSLQuery.ssl_query]:
             raise ValueError("Query was not a valid filter")
-        req_dict = self.check_valid(req_dict, 
+        req_dict = self.check_valid(req_dict,
                 [("query", query), ("page", page), ("date", date_), ("limit", limit)]
         )
         return self.api_call("scan/ssl", req_dict)
+
+    def honeypot_common_vulnerabilities(self, date_: date = None, date_end: date = None, limit: int = None) -> list or str:
+        """Get honeypot CVE statistics
+
+        Args:
+            date_ (date, optional): Date to get honeypot data from
+            date_end (date, optional): Date to get honeypot data since ``date_``; should be
+                later than ``date_``. Defaults to None.
+            limit (int, optional): Limit number of results. Defaults to None.
+
+        Returns:
+            list or str: Honeypot CVE statistics
+        """
+        req_dict = {}
+        if date_: date_ = self.date_eval(date_, date_end)
+        req_dict = self.check_valid(req_dict,
+                [("date", date_), ("limit", limit)]
+        )
+        return self.api_call("honeypot/common-vulnerabilities", req_dict)
+
+    def honeypot_exploited_vulnerabilities(self, date_: date = None, iot: str = None,
+        kev: str = None, geo: list = None, limit: int = None) -> list or str:
+        """List honeypot exploited vulnerabilities in descending order by number of IPs
+
+        Args:
+            date_ (date, optional): Date (YYYY-MM-DD). Defaults to None.
+            iot (str, optional): "yes" or "no" to filter IoT devices. Defaults to None.
+            kev (str, optional): "yes" or "no" to filter CISA KEV. Defaults to None.
+            geo (list, optional): List of two letter country codes. Defaults to None.
+            limit (int, optional): Maximum number of records to return. Defaults to None.
+
+        Returns:
+            list or str: List of exploited vulnerabilities with statistics
+        """
+        req_dict = {}
+        req_dict = self.check_valid(req_dict,
+                [("date", date_), ("iot", iot), ("kev", kev), ("geo", geo), ("limit", limit)]
+        )
+        return self.api_call("honeypot/exploited-vulnerabilities", req_dict)
+
+    def honeypot_vulnerability_count(self, date_: date = None, host_type: str = None,
+        vendor: str = None, vulnerability: str = None, event_type: str = None,
+        geo: list = None, limit: int = None) -> list or str:
+        """Get the number of unique IPs seen for honeypot vulnerabilities
+
+        Args:
+            date_ (date, optional): Date (YYYY-MM-DD). Defaults to None.
+            host_type (str, optional): "src" or "dst". Defaults to None.
+            vendor (str, optional): Vendor name. Defaults to None.
+            vulnerability (str, optional): Vulnerability name (e.g., CVE-2017-17215). Defaults to None.
+            event_type (str, optional): Type of event. Defaults to None.
+            geo (list, optional): List of two letter country codes. Defaults to None.
+            limit (int, optional): Maximum number of records to return. Defaults to None.
+
+        Returns:
+            list or str: Vulnerability count statistics by unique IPs
+        """
+        req_dict = {}
+        req_dict = self.check_valid(req_dict,
+                [("date", date_), ("host_type", host_type), ("vendor", vendor),
+                 ("vulnerability", vulnerability), ("event_type", event_type),
+                 ("geo", geo), ("limit", limit)]
+        )
+        return self.api_call("honeypot/vulnerability-count", req_dict)

@@ -87,3 +87,41 @@ def test_asn(S: ShadowAPI):
     r6 = S.asn(query = 109)
     assert type(r6) in (dict, list)
     sleep(1)
+
+def test_honeypot(S: ShadowAPI, date_since: date, date_today: date):
+    # Test honeypot common vulnerabilities
+    r1 = S.honeypot_common_vulnerabilities(date_=date_since, date_end=date_today, limit=10)
+    assert type(r1) in (dict, list)
+    sleep(1)
+
+    # Test honeypot exploited vulnerabilities
+    r2 = S.honeypot_exploited_vulnerabilities(limit=10)
+    assert type(r2) in (dict, list)
+
+    # Test with IoT filter
+    r3 = S.honeypot_exploited_vulnerabilities(iot="yes", limit=5)
+    assert type(r3) in (dict, list)
+    sleep(1)
+
+    # Test with KEV filter
+    r4 = S.honeypot_exploited_vulnerabilities(kev="yes", limit=5)
+    assert type(r4) in (dict, list)
+
+    # Test with geo filter
+    r5 = S.honeypot_exploited_vulnerabilities(geo=["US"], limit=5)
+    assert type(r5) in (dict, list)
+    sleep(1)
+
+    # Test honeypot vulnerability count
+    r6 = S.honeypot_vulnerability_count(host_type="dst", vulnerability="CVE-2017-17215", limit=10)
+    assert type(r6) in (dict, list)
+
+    # Test with vendor filter
+    r7 = S.honeypot_vulnerability_count(vendor="Huawei", limit=10)
+    assert type(r7) in (dict, list)
+    sleep(1)
+
+    # Test with geo filter
+    r8 = S.honeypot_vulnerability_count(geo=["DE", "US"], limit=10)
+    assert type(r8) in (dict, list)
+    sleep(1)
