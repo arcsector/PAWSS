@@ -189,7 +189,7 @@ class ShadowAPI:
         )
         return self.api_call('reports/list', req_dict)
 
-    def report_download(self, id_: str) -> list or str:
+    def report_download(self, id_: str) -> list:
         """Downloads details on reports
 
         Args:
